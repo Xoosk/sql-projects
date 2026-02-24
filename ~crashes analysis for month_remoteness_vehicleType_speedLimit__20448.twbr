@@ -1,0 +1,1599 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20242.25.0224.1609                               -->
+<workbook original-version='18.1' source-build='2024.2.8 (20242.25.0224.1609)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <IntuitiveSorting />
+    <IntuitiveSorting_SP2 />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelRelationshipPerfOptions.true...ObjectModelRelationshipPerfOptions />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource caption='fact_crashes+ (Project_DW01)' inline='true' name='federated.1dotrmn0ul897j1g80uz80nt8eac' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='localhost' name='postgres.0sj7n850u8nxl1100snwa1xepgtk'>
+            <connection authentication='username-password' class='postgres' dbname='Project_DW01' one-time-sql='' port='5432' server='localhost' username='postgres' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='postgres.0sj7n850u8nxl1100snwa1xepgtk' name='dim_date' table='[public].[dim_date]' type='table' />
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation type='collection'>
+          <relation connection='postgres.0sj7n850u8nxl1100snwa1xepgtk' name='fact_crashes' table='[public].[fact_crashes]' type='table' />
+          <relation connection='postgres.0sj7n850u8nxl1100snwa1xepgtk' name='dim_date' table='[public].[dim_date]' type='table' />
+          <relation connection='postgres.0sj7n850u8nxl1100snwa1xepgtk' name='dim_dwelling' table='[public].[dim_dwelling]' type='table' />
+          <relation connection='postgres.0sj7n850u8nxl1100snwa1xepgtk' name='dim_event_flags' table='[public].[dim_event_flags]' type='table' />
+          <relation connection='postgres.0sj7n850u8nxl1100snwa1xepgtk' name='dim_location' table='[public].[dim_location]' type='table' />
+          <relation connection='postgres.0sj7n850u8nxl1100snwa1xepgtk' name='dim_person' table='[public].[dim_person]' type='table' />
+          <relation connection='postgres.0sj7n850u8nxl1100snwa1xepgtk' name='dim_road' table='[public].[dim_road]' type='table' />
+          <relation connection='postgres.0sj7n850u8nxl1100snwa1xepgtk' name='dim_time' table='[public].[dim_time]' type='table' />
+          <relation connection='postgres.0sj7n850u8nxl1100snwa1xepgtk' name='dim_vehicle' table='[public].[dim_vehicle]' type='table' />
+          <relation connection='postgres.0sj7n850u8nxl1100snwa1xepgtk' name='fact_fatalities' table='[public].[fact_fatalities]' type='table' />
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <cols>
+          <map key='[age]' value='[dim_person].[age]' />
+          <map key='[age_group]' value='[dim_person].[age_group]' />
+          <map key='[articulated_truck_involved]' value='[dim_vehicle].[articulated_truck_involved]' />
+          <map key='[bus_involved]' value='[dim_vehicle].[bus_involved]' />
+          <map key='[christmas_period (dim_road)]' value='[dim_road].[christmas_period]' />
+          <map key='[christmas_period]' value='[dim_event_flags].[christmas_period]' />
+          <map key='[crash_id (fact_fatalities)]' value='[fact_fatalities].[crash_id]' />
+          <map key='[crash_id]' value='[fact_crashes].[crash_id]' />
+          <map key='[crash_type]' value='[dim_vehicle].[crash_type]' />
+          <map key='[date_id (dim_date)]' value='[dim_date].[date_id]' />
+          <map key='[date_id (fact_fatalities)]' value='[fact_fatalities].[date_id]' />
+          <map key='[date_id]' value='[fact_crashes].[date_id]' />
+          <map key='[day]' value='[dim_date].[day]' />
+          <map key='[day_of_week]' value='[dim_time].[day_of_week]' />
+          <map key='[dwelling_count]' value='[dim_dwelling].[dwelling_count]' />
+          <map key='[dwelling_id (dim_dwelling)]' value='[dim_dwelling].[dwelling_id]' />
+          <map key='[dwelling_id]' value='[fact_crashes].[dwelling_id]' />
+          <map key='[easter_period (dim_road)]' value='[dim_road].[easter_period]' />
+          <map key='[easter_period]' value='[dim_event_flags].[easter_period]' />
+          <map key='[event_id (dim_event_flags)]' value='[dim_event_flags].[event_id]' />
+          <map key='[event_id]' value='[fact_crashes].[event_id]' />
+          <map key='[fatality_id]' value='[fact_fatalities].[fatality_id]' />
+          <map key='[fatality_person_count]' value='[fact_crashes].[fatality_person_count]' />
+          <map key='[gender]' value='[dim_person].[gender]' />
+          <map key='[lga_name (dim_location)]' value='[dim_location].[lga_name]' />
+          <map key='[lga_name]' value='[dim_dwelling].[lga_name]' />
+          <map key='[location_id (dim_location)]' value='[dim_location].[location_id]' />
+          <map key='[location_id (fact_fatalities)]' value='[fact_fatalities].[location_id]' />
+          <map key='[location_id]' value='[fact_crashes].[location_id]' />
+          <map key='[month]' value='[dim_date].[month]' />
+          <map key='[num_fatalities]' value='[fact_crashes].[num_fatalities]' />
+          <map key='[person_count]' value='[fact_fatalities].[person_count]' />
+          <map key='[person_id (dim_person)]' value='[dim_person].[person_id]' />
+          <map key='[person_id (fact_crashes)]' value='[fact_crashes].[person_id]' />
+          <map key='[person_id]' value='[fact_fatalities].[person_id]' />
+          <map key='[remoteness_area]' value='[dim_location].[remoteness_area]' />
+          <map key='[rigid_truck_involved]' value='[dim_vehicle].[rigid_truck_involved]' />
+          <map key='[road_id (dim_road)]' value='[dim_road].[road_id]' />
+          <map key='[road_id]' value='[fact_crashes].[road_id]' />
+          <map key='[road_type]' value='[dim_road].[road_type]' />
+          <map key='[road_user]' value='[dim_person].[road_user]' />
+          <map key='[sa4_name]' value='[dim_location].[sa4_name]' />
+          <map key='[speed_limit]' value='[dim_road].[speed_limit]' />
+          <map key='[state]' value='[dim_location].[state]' />
+          <map key='[time]' value='[dim_time].[time]' />
+          <map key='[time_id (dim_time)]' value='[dim_time].[time_id]' />
+          <map key='[time_id (fact_fatalities)]' value='[fact_fatalities].[time_id]' />
+          <map key='[time_id]' value='[fact_crashes].[time_id]' />
+          <map key='[time_of_day]' value='[dim_time].[time_of_day]' />
+          <map key='[vehicle_id (dim_vehicle)]' value='[dim_vehicle].[vehicle_id]' />
+          <map key='[vehicle_id]' value='[fact_crashes].[vehicle_id]' />
+          <map key='[year]' value='[dim_date].[year]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>crash_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[crash_id]</local-name>
+            <parent-name>[fact_crashes]</parent-name>
+            <remote-alias>crash_id</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>false</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_crashes_8D3D661C4ACF4FB59A2E5E3885CA12F0]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>date_id</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[date_id]</local-name>
+            <parent-name>[fact_crashes]</parent-name>
+            <remote-alias>date_id</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_crashes_8D3D661C4ACF4FB59A2E5E3885CA12F0]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>location_id</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[location_id]</local-name>
+            <parent-name>[fact_crashes]</parent-name>
+            <remote-alias>location_id</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_crashes_8D3D661C4ACF4FB59A2E5E3885CA12F0]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>vehicle_id</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[vehicle_id]</local-name>
+            <parent-name>[fact_crashes]</parent-name>
+            <remote-alias>vehicle_id</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_crashes_8D3D661C4ACF4FB59A2E5E3885CA12F0]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>road_id</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[road_id]</local-name>
+            <parent-name>[fact_crashes]</parent-name>
+            <remote-alias>road_id</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_crashes_8D3D661C4ACF4FB59A2E5E3885CA12F0]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>time_id</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[time_id]</local-name>
+            <parent-name>[fact_crashes]</parent-name>
+            <remote-alias>time_id</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_crashes_8D3D661C4ACF4FB59A2E5E3885CA12F0]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>dwelling_id</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[dwelling_id]</local-name>
+            <parent-name>[fact_crashes]</parent-name>
+            <remote-alias>dwelling_id</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_crashes_8D3D661C4ACF4FB59A2E5E3885CA12F0]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>event_id</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[event_id]</local-name>
+            <parent-name>[fact_crashes]</parent-name>
+            <remote-alias>event_id</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_crashes_8D3D661C4ACF4FB59A2E5E3885CA12F0]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>num_fatalities</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[num_fatalities]</local-name>
+            <parent-name>[fact_crashes]</parent-name>
+            <remote-alias>num_fatalities</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_crashes_8D3D661C4ACF4FB59A2E5E3885CA12F0]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>fatality_person_count</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[fatality_person_count]</local-name>
+            <parent-name>[fact_crashes]</parent-name>
+            <remote-alias>fatality_person_count</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_crashes_8D3D661C4ACF4FB59A2E5E3885CA12F0]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>person_id</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[person_id (fact_crashes)]</local-name>
+            <parent-name>[fact_crashes]</parent-name>
+            <remote-alias>person_id</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_crashes_8D3D661C4ACF4FB59A2E5E3885CA12F0]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>date_id</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[date_id (dim_date)]</local-name>
+            <parent-name>[dim_date]</parent-name>
+            <remote-alias>date_id</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>false</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_date_9A4B02FAEA50402480E05F7A462D004A]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>day</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[day]</local-name>
+            <parent-name>[dim_date]</parent-name>
+            <remote-alias>day</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_date_9A4B02FAEA50402480E05F7A462D004A]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>month</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[month]</local-name>
+            <parent-name>[dim_date]</parent-name>
+            <remote-alias>month</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_date_9A4B02FAEA50402480E05F7A462D004A]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>year</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[year]</local-name>
+            <parent-name>[dim_date]</parent-name>
+            <remote-alias>year</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_date_9A4B02FAEA50402480E05F7A462D004A]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>dwelling_id</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[dwelling_id (dim_dwelling)]</local-name>
+            <parent-name>[dim_dwelling]</parent-name>
+            <remote-alias>dwelling_id</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>false</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_dwelling_4ECCA43BAADE43829AFA5193CE38DA54]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>lga_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[lga_name]</local-name>
+            <parent-name>[dim_dwelling]</parent-name>
+            <remote-alias>lga_name</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>100</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_dwelling_4ECCA43BAADE43829AFA5193CE38DA54]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>dwelling_count</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[dwelling_count]</local-name>
+            <parent-name>[dim_dwelling]</parent-name>
+            <remote-alias>dwelling_count</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_dwelling_4ECCA43BAADE43829AFA5193CE38DA54]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>event_id</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[event_id (dim_event_flags)]</local-name>
+            <parent-name>[dim_event_flags]</parent-name>
+            <remote-alias>event_id</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>false</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_event_flags_34F50659FD8C4096B6DFF2E875854038]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>christmas_period</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[christmas_period]</local-name>
+            <parent-name>[dim_event_flags]</parent-name>
+            <remote-alias>christmas_period</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_event_flags_34F50659FD8C4096B6DFF2E875854038]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>easter_period</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[easter_period]</local-name>
+            <parent-name>[dim_event_flags]</parent-name>
+            <remote-alias>easter_period</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_event_flags_34F50659FD8C4096B6DFF2E875854038]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>location_id</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[location_id (dim_location)]</local-name>
+            <parent-name>[dim_location]</parent-name>
+            <remote-alias>location_id</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>false</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_location_7FB5E89777FB4509838590A55A9D0826]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>lga_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[lga_name (dim_location)]</local-name>
+            <parent-name>[dim_location]</parent-name>
+            <remote-alias>lga_name</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>100</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_location_7FB5E89777FB4509838590A55A9D0826]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sa4_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[sa4_name]</local-name>
+            <parent-name>[dim_location]</parent-name>
+            <remote-alias>sa4_name</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>100</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_location_7FB5E89777FB4509838590A55A9D0826]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>state</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[state]</local-name>
+            <parent-name>[dim_location]</parent-name>
+            <remote-alias>state</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>10</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_location_7FB5E89777FB4509838590A55A9D0826]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>remoteness_area</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[remoteness_area]</local-name>
+            <parent-name>[dim_location]</parent-name>
+            <remote-alias>remoteness_area</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_location_7FB5E89777FB4509838590A55A9D0826]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>person_id</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[person_id (dim_person)]</local-name>
+            <parent-name>[dim_person]</parent-name>
+            <remote-alias>person_id</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>false</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_person_38597E5C0260432A97FE6D8D1192E2CA]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>gender</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[gender]</local-name>
+            <parent-name>[dim_person]</parent-name>
+            <remote-alias>gender</remote-alias>
+            <ordinal>33</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>10</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_person_38597E5C0260432A97FE6D8D1192E2CA]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>age</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[age]</local-name>
+            <parent-name>[dim_person]</parent-name>
+            <remote-alias>age</remote-alias>
+            <ordinal>34</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_person_38597E5C0260432A97FE6D8D1192E2CA]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>age_group</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[age_group]</local-name>
+            <parent-name>[dim_person]</parent-name>
+            <remote-alias>age_group</remote-alias>
+            <ordinal>35</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>20</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_person_38597E5C0260432A97FE6D8D1192E2CA]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>road_user</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[road_user]</local-name>
+            <parent-name>[dim_person]</parent-name>
+            <remote-alias>road_user</remote-alias>
+            <ordinal>36</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_person_38597E5C0260432A97FE6D8D1192E2CA]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>road_id</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[road_id (dim_road)]</local-name>
+            <parent-name>[dim_road]</parent-name>
+            <remote-alias>road_id</remote-alias>
+            <ordinal>38</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>false</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_road_597CB3D8F83C4885A04CD3163F64B432]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>road_type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[road_type]</local-name>
+            <parent-name>[dim_road]</parent-name>
+            <remote-alias>road_type</remote-alias>
+            <ordinal>39</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_road_597CB3D8F83C4885A04CD3163F64B432]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>speed_limit</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[speed_limit]</local-name>
+            <parent-name>[dim_road]</parent-name>
+            <remote-alias>speed_limit</remote-alias>
+            <ordinal>40</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_road_597CB3D8F83C4885A04CD3163F64B432]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>christmas_period</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[christmas_period (dim_road)]</local-name>
+            <parent-name>[dim_road]</parent-name>
+            <remote-alias>christmas_period</remote-alias>
+            <ordinal>41</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_road_597CB3D8F83C4885A04CD3163F64B432]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>easter_period</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[easter_period (dim_road)]</local-name>
+            <parent-name>[dim_road]</parent-name>
+            <remote-alias>easter_period</remote-alias>
+            <ordinal>42</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_road_597CB3D8F83C4885A04CD3163F64B432]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>time_id</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[time_id (dim_time)]</local-name>
+            <parent-name>[dim_time]</parent-name>
+            <remote-alias>time_id</remote-alias>
+            <ordinal>44</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>false</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_time_C090210BF7134804A0F2E799D9C949C7]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>time</remote-name>
+            <remote-type>134</remote-type>
+            <local-name>[time]</local-name>
+            <parent-name>[dim_time]</parent-name>
+            <remote-alias>time</remote-alias>
+            <ordinal>45</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Hour</aggregation>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_time_C090210BF7134804A0F2E799D9C949C7]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>day_of_week</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[day_of_week]</local-name>
+            <parent-name>[dim_time]</parent-name>
+            <remote-alias>day_of_week</remote-alias>
+            <ordinal>46</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>20</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_time_C090210BF7134804A0F2E799D9C949C7]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>time_of_day</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[time_of_day]</local-name>
+            <parent-name>[dim_time]</parent-name>
+            <remote-alias>time_of_day</remote-alias>
+            <ordinal>47</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>20</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_time_C090210BF7134804A0F2E799D9C949C7]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>vehicle_id</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[vehicle_id (dim_vehicle)]</local-name>
+            <parent-name>[dim_vehicle]</parent-name>
+            <remote-alias>vehicle_id</remote-alias>
+            <ordinal>49</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>false</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_vehicle_099A6D2E82BC44E882447BA06D0D6AB7]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>crash_type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[crash_type]</local-name>
+            <parent-name>[dim_vehicle]</parent-name>
+            <remote-alias>crash_type</remote-alias>
+            <ordinal>50</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_vehicle_099A6D2E82BC44E882447BA06D0D6AB7]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>bus_involved</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[bus_involved]</local-name>
+            <parent-name>[dim_vehicle]</parent-name>
+            <remote-alias>bus_involved</remote-alias>
+            <ordinal>51</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_vehicle_099A6D2E82BC44E882447BA06D0D6AB7]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>rigid_truck_involved</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[rigid_truck_involved]</local-name>
+            <parent-name>[dim_vehicle]</parent-name>
+            <remote-alias>rigid_truck_involved</remote-alias>
+            <ordinal>52</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_vehicle_099A6D2E82BC44E882447BA06D0D6AB7]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>articulated_truck_involved</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[articulated_truck_involved]</local-name>
+            <parent-name>[dim_vehicle]</parent-name>
+            <remote-alias>articulated_truck_involved</remote-alias>
+            <ordinal>53</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dim_vehicle_099A6D2E82BC44E882447BA06D0D6AB7]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>fatality_id</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[fatality_id]</local-name>
+            <parent-name>[fact_fatalities]</parent-name>
+            <remote-alias>fatality_id</remote-alias>
+            <ordinal>55</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>false</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_fatalities_DBFEAC334C0C40B58100DA8750A508A6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>crash_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[crash_id (fact_fatalities)]</local-name>
+            <parent-name>[fact_fatalities]</parent-name>
+            <remote-alias>crash_id</remote-alias>
+            <ordinal>56</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_fatalities_DBFEAC334C0C40B58100DA8750A508A6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>person_id</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[person_id]</local-name>
+            <parent-name>[fact_fatalities]</parent-name>
+            <remote-alias>person_id</remote-alias>
+            <ordinal>57</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_fatalities_DBFEAC334C0C40B58100DA8750A508A6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>date_id</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[date_id (fact_fatalities)]</local-name>
+            <parent-name>[fact_fatalities]</parent-name>
+            <remote-alias>date_id</remote-alias>
+            <ordinal>58</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_fatalities_DBFEAC334C0C40B58100DA8750A508A6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>location_id</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[location_id (fact_fatalities)]</local-name>
+            <parent-name>[fact_fatalities]</parent-name>
+            <remote-alias>location_id</remote-alias>
+            <ordinal>59</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_fatalities_DBFEAC334C0C40B58100DA8750A508A6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>time_id</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[time_id (fact_fatalities)]</local-name>
+            <parent-name>[fact_fatalities]</parent-name>
+            <remote-alias>time_id</remote-alias>
+            <ordinal>60</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_fatalities_DBFEAC334C0C40B58100DA8750A508A6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>person_count</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[person_count]</local-name>
+            <parent-name>[fact_fatalities]</parent-name>
+            <remote-alias>person_count</remote-alias>
+            <ordinal>61</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[fact_fatalities_DBFEAC334C0C40B58100DA8750A508A6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <_.fcp.ObjectModelTableType.true...column caption='dim_date' datatype='table' name='[__tableau_internal_object_id__].[dim_date_9A4B02FAEA50402480E05F7A462D004A]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='dim_dwelling' datatype='table' name='[__tableau_internal_object_id__].[dim_dwelling_4ECCA43BAADE43829AFA5193CE38DA54]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='dim_event_flags' datatype='table' name='[__tableau_internal_object_id__].[dim_event_flags_34F50659FD8C4096B6DFF2E875854038]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='dim_location' datatype='table' name='[__tableau_internal_object_id__].[dim_location_7FB5E89777FB4509838590A55A9D0826]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='dim_person' datatype='table' name='[__tableau_internal_object_id__].[dim_person_38597E5C0260432A97FE6D8D1192E2CA]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='dim_road' datatype='table' name='[__tableau_internal_object_id__].[dim_road_597CB3D8F83C4885A04CD3163F64B432]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='dim_time' datatype='table' name='[__tableau_internal_object_id__].[dim_time_C090210BF7134804A0F2E799D9C949C7]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='dim_vehicle' datatype='table' name='[__tableau_internal_object_id__].[dim_vehicle_099A6D2E82BC44E882447BA06D0D6AB7]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='fact_crashes' datatype='table' name='[__tableau_internal_object_id__].[fact_crashes_8D3D661C4ACF4FB59A2E5E3885CA12F0]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='fact_fatalities' datatype='table' name='[__tableau_internal_object_id__].[fact_fatalities_DBFEAC334C0C40B58100DA8750A508A6]' role='measure' type='quantitative' />
+      <column caption='Age' datatype='integer' name='[age]' role='measure' type='quantitative' />
+      <column caption='Age Group' datatype='string' name='[age_group]' role='dimension' type='nominal' />
+      <column caption='Articulated Truck Involved' datatype='boolean' name='[articulated_truck_involved]' role='dimension' type='nominal' />
+      <column caption='Bus Involved' datatype='boolean' name='[bus_involved]' role='dimension' type='nominal' />
+      <column caption='Christmas Period (Dim Road)' datatype='boolean' name='[christmas_period (dim_road)]' role='dimension' type='nominal' />
+      <column caption='Christmas Period' datatype='boolean' name='[christmas_period]' role='dimension' type='nominal' />
+      <column caption='Crash Id (Fact Fatalities)' datatype='integer' name='[crash_id (fact_fatalities)]' role='dimension' type='ordinal' />
+      <column caption='Crash Id' datatype='integer' name='[crash_id]' role='dimension' type='ordinal' />
+      <column caption='Crash Type' datatype='string' name='[crash_type]' role='dimension' type='nominal' />
+      <column aggregation='Sum' caption='Date Id (Dim Date)' datatype='integer' name='[date_id (dim_date)]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' caption='Date Id (Fact Fatalities)' datatype='integer' name='[date_id (fact_fatalities)]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' caption='Date Id' datatype='integer' name='[date_id]' role='dimension' type='ordinal' />
+      <column caption='Day' datatype='integer' name='[day]' role='dimension' type='quantitative' />
+      <column caption='Day Of Week' datatype='string' name='[day_of_week]' role='dimension' type='nominal' />
+      <column caption='Dwelling Count' datatype='integer' name='[dwelling_count]' role='measure' type='quantitative' />
+      <column aggregation='Sum' caption='Dwelling Id (Dim Dwelling)' datatype='integer' name='[dwelling_id (dim_dwelling)]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' caption='Dwelling Id' datatype='integer' name='[dwelling_id]' role='dimension' type='ordinal' />
+      <column caption='Easter Period (Dim Road)' datatype='boolean' name='[easter_period (dim_road)]' role='dimension' type='nominal' />
+      <column caption='Easter Period' datatype='boolean' name='[easter_period]' role='dimension' type='nominal' />
+      <column aggregation='Sum' caption='Event Id (Dim Event Flags)' datatype='integer' name='[event_id (dim_event_flags)]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' caption='Event Id' datatype='integer' name='[event_id]' role='dimension' type='ordinal' />
+      <column caption='Fatality Id' datatype='integer' name='[fatality_id]' role='dimension' type='ordinal' />
+      <column caption='Gender' datatype='string' name='[gender]' role='dimension' type='nominal' />
+      <column caption='Lga Name (Dim Location)' datatype='string' name='[lga_name (dim_location)]' role='dimension' type='nominal' />
+      <column caption='Lga Name' datatype='string' name='[lga_name]' role='dimension' type='nominal' />
+      <column aggregation='Sum' caption='Location Id (Dim Location)' datatype='integer' name='[location_id (dim_location)]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' caption='Location Id (Fact Fatalities)' datatype='integer' name='[location_id (fact_fatalities)]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' caption='Location Id' datatype='integer' name='[location_id]' role='dimension' type='ordinal' />
+      <column caption='Month' datatype='integer' name='[month]' role='dimension' type='quantitative' />
+      <column caption='Num Fatalities' datatype='integer' name='[num_fatalities]' role='measure' type='quantitative' />
+      <column caption='Person Count' datatype='integer' name='[person_count]' role='measure' type='quantitative' />
+      <column aggregation='Sum' caption='Person Id (Dim Person)' datatype='integer' name='[person_id (dim_person)]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[person_id (fact_crashes)]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' caption='Person Id' datatype='integer' name='[person_id]' role='dimension' type='ordinal' />
+      <column caption='Remoteness Area' datatype='string' name='[remoteness_area]' role='dimension' type='nominal' />
+      <column caption='Rigid Truck Involved' datatype='boolean' name='[rigid_truck_involved]' role='dimension' type='nominal' />
+      <column aggregation='Sum' caption='Road Id (Dim Road)' datatype='integer' name='[road_id (dim_road)]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' caption='Road Id' datatype='integer' name='[road_id]' role='dimension' type='ordinal' />
+      <column caption='Road Type' datatype='string' name='[road_type]' role='dimension' type='nominal' />
+      <column caption='Road User' datatype='string' name='[road_user]' role='dimension' type='nominal' />
+      <column caption='Sa4 Name' datatype='string' name='[sa4_name]' role='dimension' type='nominal' />
+      <column caption='Speed Limit' datatype='string' name='[speed_limit]' role='dimension' type='nominal' />
+      <column caption='State' datatype='string' name='[state]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column aggregation='Hour' caption='Time' datatype='datetime' name='[time]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' caption='Time Id (Dim Time)' datatype='integer' name='[time_id (dim_time)]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' caption='Time Id (Fact Fatalities)' datatype='integer' name='[time_id (fact_fatalities)]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' caption='Time Id' datatype='integer' name='[time_id]' role='dimension' type='ordinal' />
+      <column caption='Time Of Day' datatype='string' name='[time_of_day]' role='dimension' type='nominal' />
+      <column aggregation='Sum' caption='Vehicle Id (Dim Vehicle)' datatype='integer' name='[vehicle_id (dim_vehicle)]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' caption='Vehicle Id' datatype='integer' name='[vehicle_id]' role='dimension' type='ordinal' />
+      <column caption='Year' datatype='integer' name='[year]' role='dimension' type='quantitative' />
+      <column-instance column='[crash_id (fact_fatalities)]' derivation='Count' name='[cnt:crash_id (fact_fatalities):qk]' pivot='key' type='quantitative' />
+      <column-instance column='[crash_id]' derivation='Count' name='[cnt:crash_id:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[articulated_truck_involved]' derivation='None' name='[none:articulated_truck_involved:nk]' pivot='key' type='nominal' />
+      <column-instance column='[bus_involved]' derivation='None' name='[none:bus_involved:nk]' pivot='key' type='nominal' />
+      <column-instance column='[christmas_period]' derivation='None' name='[none:christmas_period:nk]' pivot='key' type='nominal' />
+      <column-instance column='[easter_period]' derivation='None' name='[none:easter_period:nk]' pivot='key' type='nominal' />
+      <column-instance column='[gender]' derivation='None' name='[none:gender:nk]' pivot='key' type='nominal' />
+      <column-instance column='[rigid_truck_involved]' derivation='None' name='[none:rigid_truck_involved:nk]' pivot='key' type='nominal' />
+      <column-instance column='[person_count]' derivation='Sum' name='[sum:person_count:qk]' pivot='key' type='quantitative' />
+      <group hidden='true' name='[Exclusions (Articulated Truck Involved,Bus Involved,Rigid Truck Involved)]' name-style='unqualified' user:auto-column='exclude'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[none:articulated_truck_involved:nk]' />
+          <groupfilter function='level-members' level='[none:bus_involved:nk]' />
+          <groupfilter function='level-members' level='[none:rigid_truck_involved:nk]' />
+        </groupfilter>
+      </group>
+      <group hidden='true' name='[Exclusions (Christmas Period,Easter Period)]' name-style='unqualified' user:auto-column='exclude'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[none:christmas_period:nk]' />
+          <groupfilter function='level-members' level='[none:easter_period:nk]' />
+        </groupfilter>
+      </group>
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:gender:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;Female&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>%null%</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Male&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[:Measure Names]' palette='blue_10_0' type='palette'>
+            <map to='#2a5783'>
+              <bucket>&quot;[federated.1dotrmn0ul897j1g80uz80nt8eac].[sum:person_count:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.1dotrmn0ul897j1g80uz80nt8eac].[cnt:crash_id:qk]&quot;</bucket>
+            </map>
+            <map to='#b9ddf1'>
+              <bucket>&quot;[federated.1dotrmn0ul897j1g80uz80nt8eac].[cnt:crash_id (fact_fatalities):qk]&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;India&quot;' />
+      </semantic-values>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='dim_date' id='dim_date_9A4B02FAEA50402480E05F7A462D004A'>
+            <properties context=''>
+              <relation connection='postgres.0sj7n850u8nxl1100snwa1xepgtk' name='dim_date' table='[public].[dim_date]' type='table' />
+            </properties>
+          </object>
+          <object caption='dim_dwelling' id='dim_dwelling_4ECCA43BAADE43829AFA5193CE38DA54'>
+            <properties context=''>
+              <relation connection='postgres.0sj7n850u8nxl1100snwa1xepgtk' name='dim_dwelling' table='[public].[dim_dwelling]' type='table' />
+            </properties>
+          </object>
+          <object caption='dim_event_flags' id='dim_event_flags_34F50659FD8C4096B6DFF2E875854038'>
+            <properties context=''>
+              <relation connection='postgres.0sj7n850u8nxl1100snwa1xepgtk' name='dim_event_flags' table='[public].[dim_event_flags]' type='table' />
+            </properties>
+          </object>
+          <object caption='dim_location' id='dim_location_7FB5E89777FB4509838590A55A9D0826'>
+            <properties context=''>
+              <relation connection='postgres.0sj7n850u8nxl1100snwa1xepgtk' name='dim_location' table='[public].[dim_location]' type='table' />
+            </properties>
+          </object>
+          <object caption='dim_person' id='dim_person_38597E5C0260432A97FE6D8D1192E2CA'>
+            <properties context=''>
+              <relation connection='postgres.0sj7n850u8nxl1100snwa1xepgtk' name='dim_person' table='[public].[dim_person]' type='table' />
+            </properties>
+          </object>
+          <object caption='dim_road' id='dim_road_597CB3D8F83C4885A04CD3163F64B432'>
+            <properties context=''>
+              <relation connection='postgres.0sj7n850u8nxl1100snwa1xepgtk' name='dim_road' table='[public].[dim_road]' type='table' />
+            </properties>
+          </object>
+          <object caption='dim_time' id='dim_time_C090210BF7134804A0F2E799D9C949C7'>
+            <properties context=''>
+              <relation connection='postgres.0sj7n850u8nxl1100snwa1xepgtk' name='dim_time' table='[public].[dim_time]' type='table' />
+            </properties>
+          </object>
+          <object caption='dim_vehicle' id='dim_vehicle_099A6D2E82BC44E882447BA06D0D6AB7'>
+            <properties context=''>
+              <relation connection='postgres.0sj7n850u8nxl1100snwa1xepgtk' name='dim_vehicle' table='[public].[dim_vehicle]' type='table' />
+            </properties>
+          </object>
+          <object caption='fact_crashes' id='fact_crashes_8D3D661C4ACF4FB59A2E5E3885CA12F0'>
+            <properties context=''>
+              <relation connection='postgres.0sj7n850u8nxl1100snwa1xepgtk' name='fact_crashes' table='[public].[fact_crashes]' type='table' />
+            </properties>
+          </object>
+          <object caption='fact_fatalities' id='fact_fatalities_DBFEAC334C0C40B58100DA8750A508A6'>
+            <properties context=''>
+              <relation connection='postgres.0sj7n850u8nxl1100snwa1xepgtk' name='fact_fatalities' table='[public].[fact_fatalities]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[date_id]' />
+              <expression op='[date_id (dim_date)]' />
+            </expression>
+            <first-end-point object-id='fact_crashes_8D3D661C4ACF4FB59A2E5E3885CA12F0' />
+            <second-end-point _.fcp.ObjectModelRelationshipPerfOptions.true...is-db-set-unique-key='true' object-id='dim_date_9A4B02FAEA50402480E05F7A462D004A' unique-key='true' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[dwelling_id]' />
+              <expression op='[dwelling_id (dim_dwelling)]' />
+            </expression>
+            <first-end-point object-id='fact_crashes_8D3D661C4ACF4FB59A2E5E3885CA12F0' />
+            <second-end-point _.fcp.ObjectModelRelationshipPerfOptions.true...is-db-set-unique-key='true' object-id='dim_dwelling_4ECCA43BAADE43829AFA5193CE38DA54' unique-key='true' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[event_id]' />
+              <expression op='[event_id (dim_event_flags)]' />
+            </expression>
+            <first-end-point object-id='fact_crashes_8D3D661C4ACF4FB59A2E5E3885CA12F0' />
+            <second-end-point _.fcp.ObjectModelRelationshipPerfOptions.true...is-db-set-unique-key='true' object-id='dim_event_flags_34F50659FD8C4096B6DFF2E875854038' unique-key='true' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[location_id]' />
+              <expression op='[location_id (dim_location)]' />
+            </expression>
+            <first-end-point object-id='fact_crashes_8D3D661C4ACF4FB59A2E5E3885CA12F0' />
+            <second-end-point _.fcp.ObjectModelRelationshipPerfOptions.true...is-db-set-unique-key='true' object-id='dim_location_7FB5E89777FB4509838590A55A9D0826' unique-key='true' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[person_id (fact_crashes)]' />
+              <expression op='[person_id (dim_person)]' />
+            </expression>
+            <first-end-point object-id='fact_crashes_8D3D661C4ACF4FB59A2E5E3885CA12F0' />
+            <second-end-point _.fcp.ObjectModelRelationshipPerfOptions.true...is-db-set-unique-key='true' object-id='dim_person_38597E5C0260432A97FE6D8D1192E2CA' unique-key='true' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[road_id]' />
+              <expression op='[road_id (dim_road)]' />
+            </expression>
+            <first-end-point object-id='fact_crashes_8D3D661C4ACF4FB59A2E5E3885CA12F0' />
+            <second-end-point _.fcp.ObjectModelRelationshipPerfOptions.true...is-db-set-unique-key='true' object-id='dim_road_597CB3D8F83C4885A04CD3163F64B432' unique-key='true' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[time_id]' />
+              <expression op='[time_id (dim_time)]' />
+            </expression>
+            <first-end-point object-id='fact_crashes_8D3D661C4ACF4FB59A2E5E3885CA12F0' />
+            <second-end-point _.fcp.ObjectModelRelationshipPerfOptions.true...is-db-set-unique-key='true' object-id='dim_time_C090210BF7134804A0F2E799D9C949C7' unique-key='true' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[vehicle_id]' />
+              <expression op='[vehicle_id (dim_vehicle)]' />
+            </expression>
+            <first-end-point object-id='fact_crashes_8D3D661C4ACF4FB59A2E5E3885CA12F0' />
+            <second-end-point _.fcp.ObjectModelRelationshipPerfOptions.true...is-db-set-unique-key='true' object-id='dim_vehicle_099A6D2E82BC44E882447BA06D0D6AB7' unique-key='true' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[crash_id]' />
+              <expression op='[crash_id (fact_fatalities)]' />
+            </expression>
+            <first-end-point _.fcp.ObjectModelRelationshipPerfOptions.true...is-db-set-unique-key='true' object-id='fact_crashes_8D3D661C4ACF4FB59A2E5E3885CA12F0' unique-key='true' />
+            <second-end-point object-id='fact_fatalities_DBFEAC334C0C40B58100DA8750A508A6' />
+          </relationship>
+        </relationships>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='AgeGroup_gender_Crashes'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='fact_crashes+ (Project_DW01)' name='federated.1dotrmn0ul897j1g80uz80nt8eac' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1dotrmn0ul897j1g80uz80nt8eac'>
+            <column caption='Age Group' datatype='string' name='[age_group]' role='dimension' type='nominal' />
+            <column-instance column='[crash_id (fact_fatalities)]' derivation='Count' name='[cnt:crash_id (fact_fatalities):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[crash_id]' derivation='Count' name='[cnt:crash_id:qk]' pivot='key' type='quantitative' />
+            <column caption='Crash Id (Fact Fatalities)' datatype='integer' name='[crash_id (fact_fatalities)]' role='dimension' type='ordinal' />
+            <column caption='Crash Id' datatype='integer' name='[crash_id]' role='dimension' type='ordinal' />
+            <column caption='Gender' datatype='string' name='[gender]' role='dimension' type='nominal' />
+            <column-instance column='[age_group]' derivation='None' name='[none:age_group:nk]' pivot='key' type='nominal' />
+            <column-instance column='[gender]' derivation='None' name='[none:gender:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='label'>
+            <format attr='text-orientation' field='[federated.1dotrmn0ul897j1g80uz80nt8eac].[none:age_group:nk]' value='-90' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.1dotrmn0ul897j1g80uz80nt8eac].[cnt:crash_id:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1dotrmn0ul897j1g80uz80nt8eac].[cnt:crash_id (fact_fatalities):qk]</rows>
+        <cols>([federated.1dotrmn0ul897j1g80uz80nt8eac].[none:gender:nk] / [federated.1dotrmn0ul897j1g80uz80nt8eac].[none:age_group:nk])</cols>
+      </table>
+      <simple-id uuid='{6460F90F-E690-4752-9B7E-A0A9761B30D1}' />
+    </worksheet>
+    <worksheet name='Sheet 7'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='fact_crashes+ (Project_DW01)' name='federated.1dotrmn0ul897j1g80uz80nt8eac' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1dotrmn0ul897j1g80uz80nt8eac'>
+            <column-instance column='[crash_id (fact_fatalities)]' derivation='Count' name='[cnt:crash_id (fact_fatalities):qk]' pivot='key' type='quantitative' />
+            <column caption='Crash Id (Fact Fatalities)' datatype='integer' name='[crash_id (fact_fatalities)]' role='dimension' type='ordinal' />
+            <column caption='Gender' datatype='string' name='[gender]' role='dimension' type='nominal' />
+            <column-instance column='[gender]' derivation='None' name='[none:gender:nk]' pivot='key' type='nominal' />
+            <column-instance column='[road_user]' derivation='None' name='[none:road_user:nk]' pivot='key' type='nominal' />
+            <column caption='Road User' datatype='string' name='[road_user]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='label'>
+            <format attr='text-orientation' field='[federated.1dotrmn0ul897j1g80uz80nt8eac].[none:road_user:nk]' value='-90' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.1dotrmn0ul897j1g80uz80nt8eac].[cnt:crash_id (fact_fatalities):qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1dotrmn0ul897j1g80uz80nt8eac].[cnt:crash_id (fact_fatalities):qk]</rows>
+        <cols>([federated.1dotrmn0ul897j1g80uz80nt8eac].[none:gender:nk] / [federated.1dotrmn0ul897j1g80uz80nt8eac].[none:road_user:nk])</cols>
+      </table>
+      <simple-id uuid='{1BCCA436-DD41-487A-A1F4-CD71FC00B591}' />
+    </worksheet>
+    <worksheet name='Truck bus involvement in crashes'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Truck bus involvement in carshes</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='fact_crashes+ (Project_DW01)' name='federated.1dotrmn0ul897j1g80uz80nt8eac' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1dotrmn0ul897j1g80uz80nt8eac'>
+            <column caption='Articulated Truck Involved' datatype='boolean' name='[articulated_truck_involved]' role='dimension' type='nominal' />
+            <column caption='Bus Involved' datatype='boolean' name='[bus_involved]' role='dimension' type='nominal' />
+            <column-instance column='[crash_id]' derivation='Count' name='[cnt:crash_id:qk]' pivot='key' type='quantitative' />
+            <column caption='Crash Id' datatype='integer' name='[crash_id]' role='dimension' type='ordinal' />
+            <column-instance column='[articulated_truck_involved]' derivation='None' name='[none:articulated_truck_involved:nk]' pivot='key' type='nominal' />
+            <column-instance column='[bus_involved]' derivation='None' name='[none:bus_involved:nk]' pivot='key' type='nominal' />
+            <column-instance column='[rigid_truck_involved]' derivation='None' name='[none:rigid_truck_involved:nk]' pivot='key' type='nominal' />
+            <column caption='Rigid Truck Involved' datatype='boolean' name='[rigid_truck_involved]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1dotrmn0ul897j1g80uz80nt8eac].[Exclusions (Articulated Truck Involved,Bus Involved,Rigid Truck Involved)]'>
+            <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='crossjoin'>
+                <groupfilter function='level-members' level='[none:articulated_truck_involved:nk]' />
+                <groupfilter function='level-members' level='[none:bus_involved:nk]' />
+                <groupfilter function='level-members' level='[none:rigid_truck_involved:nk]' />
+              </groupfilter>
+              <groupfilter function='crossjoin'>
+                <groupfilter function='member' level='[none:articulated_truck_involved:nk]' member='false' />
+                <groupfilter function='crossjoin'>
+                  <groupfilter function='member' level='[none:bus_involved:nk]' member='false' />
+                  <groupfilter function='member' level='[none:rigid_truck_involved:nk]' member='false' />
+                </groupfilter>
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.1dotrmn0ul897j1g80uz80nt8eac].[Exclusions (Articulated Truck Involved,Bus Involved,Rigid Truck Involved)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='label'>
+            <format attr='display' field='[federated.1dotrmn0ul897j1g80uz80nt8eac].[none:articulated_truck_involved:nk]' value='false' />
+            <format attr='display' field='[federated.1dotrmn0ul897j1g80uz80nt8eac].[none:bus_involved:nk]' value='false' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.1dotrmn0ul897j1g80uz80nt8eac].[cnt:crash_id:qk]</rows>
+        <cols>([federated.1dotrmn0ul897j1g80uz80nt8eac].[none:articulated_truck_involved:nk] / ([federated.1dotrmn0ul897j1g80uz80nt8eac].[none:bus_involved:nk] / [federated.1dotrmn0ul897j1g80uz80nt8eac].[none:rigid_truck_involved:nk]))</cols>
+      </table>
+      <simple-id uuid='{82932F4F-00D7-44D1-B6B4-6958E1C37AAA}' />
+    </worksheet>
+    <worksheet name='crashes vs speed limit'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='fact_crashes+ (Project_DW01)' name='federated.1dotrmn0ul897j1g80uz80nt8eac' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1dotrmn0ul897j1g80uz80nt8eac'>
+            <column-instance column='[crash_id]' derivation='Count' name='[cnt:crash_id:qk]' pivot='key' type='quantitative' />
+            <column caption='Crash Id' datatype='integer' name='[crash_id]' role='dimension' type='ordinal' />
+            <column-instance column='[speed_limit]' derivation='None' name='[none:speed_limit:nk]' pivot='key' type='nominal' />
+            <column caption='Speed Limit' datatype='string' name='[speed_limit]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.1dotrmn0ul897j1g80uz80nt8eac].[none:speed_limit:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.1dotrmn0ul897j1g80uz80nt8eac].[cnt:crash_id:qk]' shelf='columns' />
+          </shelf-sorts>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.1dotrmn0ul897j1g80uz80nt8eac].[cnt:crash_id:qk]</rows>
+        <cols>[federated.1dotrmn0ul897j1g80uz80nt8eac].[none:speed_limit:nk]</cols>
+      </table>
+      <simple-id uuid='{9396E868-A4CC-40AF-AACB-44F49E2D9FA7}' />
+    </worksheet>
+    <worksheet name='dwelling count vs crashes'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='fact_crashes+ (Project_DW01)' name='federated.1dotrmn0ul897j1g80uz80nt8eac' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1dotrmn0ul897j1g80uz80nt8eac'>
+            <column-instance column='[crash_id]' derivation='Count' name='[cnt:crash_id:qk]' pivot='key' type='quantitative' />
+            <column caption='Crash Id' datatype='integer' name='[crash_id]' role='dimension' type='ordinal' />
+            <column caption='Dwelling Count' datatype='integer' name='[dwelling_count]' role='measure' type='quantitative' />
+            <column caption='Lga Name' datatype='string' name='[lga_name]' role='dimension' type='nominal' />
+            <column-instance column='[lga_name]' derivation='None' name='[none:lga_name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[dwelling_count]' derivation='Sum' name='[sum:dwelling_count:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1dotrmn0ul897j1g80uz80nt8eac].[none:lga_name:nk]'>
+            <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:lga_name:nk]' />
+              <groupfilter function='union'>
+                <groupfilter function='member' level='[none:lga_name:nk]' member='%null%' />
+                <groupfilter function='member' level='[none:lga_name:nk]' member='&quot;Total&quot;' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.1dotrmn0ul897j1g80uz80nt8eac].[none:lga_name:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.1dotrmn0ul897j1g80uz80nt8eac].[sum:dwelling_count:qk]' shelf='rows' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.1dotrmn0ul897j1g80uz80nt8eac].[none:lga_name:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.1dotrmn0ul897j1g80uz80nt8eac].[cnt:crash_id:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.1dotrmn0ul897j1g80uz80nt8eac].[sum:dwelling_count:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.1dotrmn0ul897j1g80uz80nt8eac].[none:lga_name:nk]</rows>
+        <cols>([federated.1dotrmn0ul897j1g80uz80nt8eac].[cnt:crash_id:qk] + [federated.1dotrmn0ul897j1g80uz80nt8eac].[sum:dwelling_count:qk])</cols>
+      </table>
+      <simple-id uuid='{1C6F13EC-3FC1-42E3-9437-9A0AB36A1D41}' />
+    </worksheet>
+    <worksheet name='month vs crashes'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='fact_crashes+ (Project_DW01)' name='federated.1dotrmn0ul897j1g80uz80nt8eac' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1dotrmn0ul897j1g80uz80nt8eac'>
+            <column-instance column='[crash_id]' derivation='Count' name='[cnt:crash_id:qk]' pivot='key' type='quantitative' />
+            <column caption='Crash Id' datatype='integer' name='[crash_id]' role='dimension' type='ordinal' />
+            <column caption='Month' datatype='integer' name='[month]' role='dimension' type='quantitative' />
+            <column-instance column='[month]' derivation='None' name='[none:month:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='on' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <size column='[federated.1dotrmn0ul897j1g80uz80nt8eac].[cnt:crash_id:qk]' />
+              <color column='[federated.1dotrmn0ul897j1g80uz80nt8eac].[cnt:crash_id:qk]' />
+              <text column='[federated.1dotrmn0ul897j1g80uz80nt8eac].[none:month:qk]' />
+              <text column='[federated.1dotrmn0ul897j1g80uz80nt8eac].[cnt:crash_id:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{502C953B-B732-4248-8863-5F108206FC90}' />
+    </worksheet>
+    <worksheet name='remoteness vs crashes'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='fact_crashes+ (Project_DW01)' name='federated.1dotrmn0ul897j1g80uz80nt8eac' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1dotrmn0ul897j1g80uz80nt8eac'>
+            <column caption='Christmas Period' datatype='boolean' name='[christmas_period]' role='dimension' type='nominal' />
+            <column-instance column='[crash_id (fact_fatalities)]' derivation='Count' name='[cnt:crash_id (fact_fatalities):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[crash_id]' derivation='Count' name='[cnt:crash_id:qk]' pivot='key' type='quantitative' />
+            <column caption='Crash Id (Fact Fatalities)' datatype='integer' name='[crash_id (fact_fatalities)]' role='dimension' type='ordinal' />
+            <column caption='Crash Id' datatype='integer' name='[crash_id]' role='dimension' type='ordinal' />
+            <column caption='Easter Period' datatype='boolean' name='[easter_period]' role='dimension' type='nominal' />
+            <column-instance column='[christmas_period]' derivation='None' name='[none:christmas_period:nk]' pivot='key' type='nominal' />
+            <column-instance column='[easter_period]' derivation='None' name='[none:easter_period:nk]' pivot='key' type='nominal' />
+            <column-instance column='[remoteness_area]' derivation='None' name='[none:remoteness_area:nk]' pivot='key' type='nominal' />
+            <column caption='Remoteness Area' datatype='string' name='[remoteness_area]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1dotrmn0ul897j1g80uz80nt8eac].[Exclusions (Christmas Period,Easter Period)]'>
+            <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='crossjoin'>
+                <groupfilter function='level-members' level='[none:christmas_period:nk]' />
+                <groupfilter function='level-members' level='[none:easter_period:nk]' />
+              </groupfilter>
+              <groupfilter function='crossjoin'>
+                <groupfilter function='member' level='[none:christmas_period:nk]' member='false' />
+                <groupfilter function='member' level='[none:easter_period:nk]' member='false' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.1dotrmn0ul897j1g80uz80nt8eac].[none:remoteness_area:nk]'>
+            <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:remoteness_area:nk]' />
+              <groupfilter function='member' level='[none:remoteness_area:nk]' member='&quot;Unknown&quot;' />
+            </groupfilter>
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.1dotrmn0ul897j1g80uz80nt8eac].[none:remoteness_area:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.1dotrmn0ul897j1g80uz80nt8eac].[cnt:crash_id:qk]' shelf='columns' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.1dotrmn0ul897j1g80uz80nt8eac].[Exclusions (Christmas Period,Easter Period)]</column>
+            <column>[federated.1dotrmn0ul897j1g80uz80nt8eac].[none:remoteness_area:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='label'>
+            <format attr='text-orientation' field='[federated.1dotrmn0ul897j1g80uz80nt8eac].[none:remoteness_area:nk]' value='-90' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1dotrmn0ul897j1g80uz80nt8eac].[cnt:crash_id (fact_fatalities):qk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1dotrmn0ul897j1g80uz80nt8eac].[cnt:crash_id:qk]</rows>
+        <cols>[federated.1dotrmn0ul897j1g80uz80nt8eac].[none:remoteness_area:nk]</cols>
+      </table>
+      <simple-id uuid='{DDB84970-3A53-4F91-9978-C061A4C61C80}' />
+    </worksheet>
+  </worksheets>
+  <windows saved-dpi-scale-factor='1.25' source-height='37'>
+    <window class='worksheet' name='crashes vs speed limit'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{6AFA928D-2784-4C91-853E-593B30A254C6}' />
+    </window>
+    <window class='worksheet' name='Truck bus involvement in crashes'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{C168F533-806A-4DA6-894C-82DF1DBD873C}' />
+    </window>
+    <window class='worksheet' name='dwelling count vs crashes'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{5C677B32-0D8D-4E65-BA6F-940CB7A5F60F}' />
+    </window>
+    <window class='worksheet' name='month vs crashes'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1dotrmn0ul897j1g80uz80nt8eac].[cnt:crash_id:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{FE7F645E-8E4A-4632-A90A-6A60C8772253}' />
+    </window>
+    <window class='worksheet' name='remoteness vs crashes'>
+      <cards>
+        <edge name='left'>
+          <strip size='300'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1dotrmn0ul897j1g80uz80nt8eac].[cnt:crash_id (fact_fatalities):qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{5FC08EF5-C785-42B5-88C1-A0F4359C120C}' />
+    </window>
+    <window class='worksheet' name='AgeGroup_gender_Crashes'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{59B8D0AC-8A9F-43A8-A24F-EF3E2C196A61}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Sheet 7'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{01FD4C59-CC4D-4EE3-865E-5CC41BB0493F}' />
+    </window>
+  </windows>
+</workbook>
